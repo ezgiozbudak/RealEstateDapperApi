@@ -1,4 +1,4 @@
-﻿namespace RealEstateDapperUI.Dtos.WhoWeAreDtos
+﻿namespace RealEstateDapperUI.Dtos.ServiceDtos
 {
     public class ResultServiceDto
     {
