@@ -1,6 +1,6 @@
 ﻿namespace RealEstateDapperUI.Dtos.ProductDtos
 {
-    public class ResultProductDtos
+    public class UpdateProductDto
     {
         public int productID { get; set; }
         public string title { get; set; }
@@ -11,8 +11,5 @@
         public string coverImage { get; set; }
         public string type { get; set; }
         public string address { get; set; }
-
-
-
     }
 }
