@@ -31,7 +31,7 @@ namespace RealEstateDapperApi.Controllers
         }
 
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteWhoWeAreDetail(int id)
         {
             _whoWeAreRepository.DeleteWhoWeAreDetail(id);
