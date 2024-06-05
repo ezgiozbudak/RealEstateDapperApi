@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using RealEstateDapperApi.Dtos.BottomGridDtos;
 using RealEstateDapperApi.Repositories.BottomGridRepositories;
 
 namespace RealEstateDapperApi.Controllers
@@ -20,5 +21,37 @@ namespace RealEstateDapperApi.Controllers
             var values = await _bottomGridRepository.GetAllBottomGridAsync();
             return Ok(values);
         }
+
+
+        [HttpPost]
+        public async Task<IActionResult> CreateBottomGrid(CreateBottomGridDto createBottomGrid)
+        {
+            _bottomGridRepository.CreateBottomGrid(createBottomGrid);
+            return Ok("Veri Başarılı Bir Şekilde Eklendi.");
+        }
+
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteBottomGrid(int id)
+        {
+            _bottomGridRepository.DeleteBottomGrid(id);
+            return Ok("Veri Başarılı Bir Şekilde Silindi");
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateBottomGrid(UpdateBottomGridDto updateBottomGridDto)
+        {
+            _bottomGridRepository.UpdateBottomGrid(updateBottomGridDto);
+            return Ok("Veri Başarıyla Güncellendi.");
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetBottomGrid(int id)
+        {
+            var value = await _bottomGridRepository.GetBottomGrid(id);
+            return Ok(value);
+        }
+
+
     }
 }
