@@ -37,6 +37,9 @@ builder.Services.AddCors(opt =>
         .SetIsOriginAllowed((host) => true).AllowCredentials();
     });
 });
+
+builder.Services.AddHttpClient();
+
 builder.Services.AddSignalR();
 
 builder.Services.AddControllers();
