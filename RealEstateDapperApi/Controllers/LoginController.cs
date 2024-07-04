@@ -20,10 +20,10 @@ namespace RealEstateDapperApi.Controllers
         [HttpPost]
         public async Task<IActionResult> SignIn(CreateLoginDto loginDto)
         {
-            string query = "Select * From AppUser Where Username = @username and Password=@password";
-            string query2 = "Select UserID From AppUser Where Username = @username and Password=@password";
+            string query = "Select * From AppUser Where UserName = @userName and Password=@password";
+            string query2 = "Select UserID From AppUser Where UserName = @userName and Password=@password";
             var parameters = new DynamicParameters();
-            parameters.Add("@username", loginDto.UserName);
+            parameters.Add("@userName", loginDto.Username);
             parameters.Add("@password", loginDto.Password);
             using (var connection = _context.CreateConnection())
             {
@@ -32,7 +32,7 @@ namespace RealEstateDapperApi.Controllers
                 if (values != null)
                 {
                     GetCheckAppUserViewModel model = new GetCheckAppUserViewModel();
-                    model.UserName = values.UserName;
+                    model.UserName = values.Username;
                     model.Id = values2.UserId;
                     var token = JwtTokenGenerator.GenerateToken(model);
                     return Ok(token);
