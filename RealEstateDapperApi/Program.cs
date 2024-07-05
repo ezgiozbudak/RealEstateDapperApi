@@ -4,6 +4,8 @@ using RealEstateDapperApi.Repositories.BottomGridRepositories;
 using RealEstateDapperApi.Repositories.CategoryRepository;
 using RealEstateDapperApi.Repositories.ContactRepositories;
 using RealEstateDapperApi.Repositories.EmployeeRepositories;
+using RealEstateDapperApi.Repositories.EstateAgentRepositories.DashboardRepositories.ChartRepositories;
+using RealEstateDapperApi.Repositories.EstateAgentRepositories.DashboardRepositories.StatisticRepositories;
 using RealEstateDapperApi.Repositories.PopularLocationRepositories;
 using RealEstateDapperApi.Repositories.ProductRepository;
 using RealEstateDapperApi.Repositories.ServiceRepository;
@@ -27,6 +29,8 @@ builder.Services.AddTransient<ITestimonialRepository, TestimonialRepository>();
 builder.Services.AddTransient<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddTransient<IContactRepository, ContactRepository>();
 builder.Services.AddTransient<IToDoListRepository, ToDoListRepository>();
+builder.Services.AddTransient<IStatisticRepository,StatisticRepository>();
+builder.Services.AddTransient<IChartRepository, ChartRepository>();
 
 builder.Services.AddCors(opt =>
 {
